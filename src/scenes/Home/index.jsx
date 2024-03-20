@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // import Motion
 import { motion } from "framer-motion";
 //import component the MUI
-import { Box, CardMedia, FormControl } from "@mui/material";
+import { Box, CardMedia, FormControl, Typography } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
@@ -11,6 +11,7 @@ import Carrousel from "../../components/Carrousel";
 import Products from "../../components/Products";
 import Logo from "../../components/Logo";
 import BannersMain from "../../components/BannersMain";
+import FlexCenter from "../../components/muiComponents/FlexCenter";
 
 const Home = () => {
   const [value, setValue] = useState("coffees");
@@ -40,7 +41,7 @@ const Home = () => {
         }}
       >
         {/* Filter */}
-        <Box sx={{ p: 2, background: "blue" }}>
+        <FlexCenter sx={{ p: 2, background: "blue", justifyContent:'space-around' }}>
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small-label">Filtro</InputLabel>
             <Select
@@ -57,7 +58,12 @@ const Home = () => {
               <MenuItem value={"salty"}>Salados</MenuItem>
             </Select>
           </FormControl>
-        </Box>
+          
+          <Typography sx={{textAlign:'right', fontSize:'0.9rem'}} >
+            Bievenidos a nuestra cafeteria
+          </Typography>
+          
+        </FlexCenter>
 
         <Carrousel value={value} />
         <BannersMain value={value} />

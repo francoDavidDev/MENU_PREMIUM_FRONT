@@ -15,7 +15,7 @@ import FlexCenter from "./muiComponents/FlexCenter";
 
 const Products = ({ value }) => {
   return (
-    <FlexCenter pb={10} flexDirection={"column"} gap={2} >
+    <FlexCenter pb={3} flexDirection={"column"} gap={2} >
       {PRODUCTS.map((card) => {
         return value === card.tag ? (
           <FlexCenter
