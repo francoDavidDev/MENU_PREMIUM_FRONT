@@ -9,8 +9,7 @@ export const modalSlice = createSlice({
     MODAL_FUNCION: (value) => {
       // Invertimos el valor del estado
       const newState = !value;
-      //cambiamos el estilo con j
-      console.log(newState)
+   
       document.body.style.overflow = newState ? "hidden" : "scroll";
 
       return newState;

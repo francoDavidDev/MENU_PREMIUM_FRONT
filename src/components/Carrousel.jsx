@@ -34,7 +34,7 @@ const Hero = ({ filterState }) => {
 
   <Box sx={{ margin: "auto", backgroundColor:'primary.main' }}>
       <Box >
-        {filterState === "coffees" || filterState === "salty" || filterState === "sweets" ? (
+        {filterState === "cafes" || filterState === "salados" || filterState === "dulces" ? (
           <FlexCenter>
             <Typography
               variant="h2"
@@ -58,7 +58,7 @@ const Hero = ({ filterState }) => {
 
         <Slider {...settings}>
           {/* PRODUCT */}
-          {filterState === "coffees" || filterState === "salty" || filterState === "sweets"
+          {filterState === "cafes" || filterState === "salados" || filterState === "dulces"
             ? PRODUCTS.map((item, index) => {
                 return filterState === item.tag && item.popular === true ? (
                   <Card key={index} sx={{ width: 1, borderRadius: 5 }}>

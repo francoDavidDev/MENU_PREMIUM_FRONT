@@ -20,13 +20,13 @@ import MenuFilter from "../../components/MenuFilter";
 
 
 const Home = () => {
-  const [value, setValue] = useState("coffees");
+  const [value, setValue] = useState("cafes");
   const [age, setAge] = useState("");
 
   //redux
   const modalstate = useSelector((state) => state.modal);
   const filterState = useSelector((state) => state.buttons);
-  console.log(filterState)
+  (filterState)
 
   const dispach = useDispatch();
   const handleModal = (value) => {
@@ -100,7 +100,7 @@ const Home = () => {
 
         <Carrousel filterState={filterState} />
         <BannersMain filterState={filterState} />
-        {filterState === "coffees" || filterState === "sweets" || filterState === "salty" ? (
+        {filterState === "cafes" || filterState === "dulces" || filterState === "salados" ? (
           <Products filterState={filterState} />
         ) : null}
       </motion.div>

@@ -1,7 +1,7 @@
 export const BUTTONS_FILTER=[
     {
        title:'Promos',
-       value:'promotions' 
+       value:'promos' 
     },
     {
         title:'Combos',
@@ -9,14 +9,14 @@ export const BUTTONS_FILTER=[
      },
      {
         title:'Cafes',
-        value:'coffees' 
+        value:'cafes' 
      },
      {
         title:'Dulces',
-        value:'sweets' 
+        value:'dulces' 
      },
      {
         title:'Salados',
-        value:'salty' 
+        value:'salados' 
      },
 ]

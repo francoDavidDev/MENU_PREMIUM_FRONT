@@ -12,18 +12,18 @@ export const BANNERS = [
     /* PROMOCIONES */
     {
         image:promotion1,
-        category: "promotions",
+        category: "promos",
         tag: "bannerCarrousel",
     },
     {
         image:promotion2,
-        category: "promotions",
+        category: "promos",
         tag: "bannerCarrousel",
     },
 
     {
         image:promotionMain,
-        category:"promotions",
+        category:"promos",
         tag: "bannerMain",
     },
 

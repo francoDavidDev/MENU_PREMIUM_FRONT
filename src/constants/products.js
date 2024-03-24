@@ -24,7 +24,7 @@ export const PRODUCTS = [
     delay: 0.3,
     image: espresso,
     price: "$950",
-    tag: "coffees",
+    tag: "cafes",
     description2:
       "30 ml de Espresso elaborado con granos de café de alta calidad, tostado perfecto para resaltar sus sabores robustos.",
     sizes: {
@@ -40,7 +40,7 @@ export const PRODUCTS = [
     delay: 0.4,
     image: americano,
     price: "$700",
-    tag: "coffees",
+    tag: "cafes",
     description2:
       "Americano suave compuesto por un solo Espresso (30 ml) combinado con agua purificada para obtener una mezcla equilibrada.",
     sizes: null,
@@ -52,7 +52,7 @@ export const PRODUCTS = [
     delay: 0.6,
     image: cappuccino,
     price: "$850",
-    tag: "coffees",
+    tag: "cafes",
     description2:
       "Café Latte cremoso con Espresso (30 ml), leche vaporizada y capa suave de espuma.",
     sizes: {
@@ -68,7 +68,7 @@ export const PRODUCTS = [
     delay: 0.6,
     image: latte,
     price: "$700",
-    tag: "coffees",
+    tag: "cafes",
     description2:
       "Cappuccino delicioso con Espresso (30 ml) y generosa espuma de leche para una textura suave y un sabor inconfundible.",
     sizes: {
@@ -84,7 +84,7 @@ export const PRODUCTS = [
     delay: 0.6,
     image: mocha,
     price: "$950",
-    tag: "coffees",
+    tag: "cafes",
     description2:
       "Mocha indulgente con Espresso (30 ml), leche fresca,  chocolate de alta calidad y crema para una experiencia decadente y deliciosa.",
     sizes: {
@@ -117,7 +117,7 @@ export const PRODUCTS = [
     delay: 0.3,
     image: tostadoJamonQueso,
     price: "$950",
-    tag: "salty",
+    tag: "salados",
     description2:
       "Tostado de Jamón y Queso con pan crujiente, jamón premium y queso derretido. Combinación salada y satisfactoria para tu paladar.",
     popular: true,
@@ -128,7 +128,7 @@ export const PRODUCTS = [
     delay: 0.4,
     image: croissantJamonQueso,
     price: "$700",
-    tag: "salty",
+    tag: "salados",
     description2:
       "Croissant relleno de jamón jugoso y queso derretido. Clásico y reconfortante, perfecta fusión de sabores y texturas.",
     popular: true,
@@ -139,7 +139,7 @@ export const PRODUCTS = [
     delay: 0.6,
     image: avocadoToast,
     price: "$850",
-    tag: "salty",
+    tag: "salados",
     description2:
       "Tostada con aguacate fresco y tomate cherry. Explosión de sabores frescos y texturas irresistibles.",
     popular: true,
@@ -150,7 +150,7 @@ export const PRODUCTS = [
     delay: 0.6,
     image: panini,
     price: "$700",
-    tag: "salty",
+    tag: "salados",
     description2:
       "Panini tostado con mezcla irresistible de ingredientes frescos. Opción sabrosa y reconfortante para satisfacer tus antojos en cualquier momento.",
     popular: false,
@@ -163,7 +163,7 @@ export const PRODUCTS = [
     delay: 0.3,
     image: tartaChocolate,
     price: "$950",
-    tag: "sweets",
+    tag: "dulces",
     description2:
       "Deliciosa tarta de chocolate para satisfacer tus antojos más dulces.",
     popular: false,
@@ -174,7 +174,7 @@ export const PRODUCTS = [
     delay: 0.4,
     image: brownie,
     price: "$700",
-    tag: "sweets",
+    tag: "dulces",
     description2:
       "Brownie rico y suave, elaborado con chocolate y nueces para una experiencia indulgente.",
     popular: false,
@@ -185,7 +185,7 @@ export const PRODUCTS = [
     delay: 0.6,
     image: cheesecake,
     price: "$850",
-    tag: "sweets",
+    tag: "dulces",
     description2:
       "Cheesecake cremoso con fresas frescas para un postre deliciosamente equilibrado.",
     popular: true,
@@ -196,7 +196,7 @@ export const PRODUCTS = [
     delay: 0.6,
     image: donuts,
     price: "$700",
-    tag: "sweets",
+    tag: "dulces",
     description2:
       "Donuts esponjosos y cubiertos con glaseado para una deliciosa indulgencia.",
     popular: true,
@@ -207,7 +207,7 @@ export const PRODUCTS = [
     delay: 0.6,
     image: tiramisu,
     price: "$950",
-    tag: "sweets",
+    tag: "dulces",
     description2:
       "Clásico Tiramisú italiano con capas de bizcocho y crema de mascarpone.",
     popular: false,
@@ -218,7 +218,7 @@ export const PRODUCTS = [
     delay: 0.6,
     image: croissantChocolate,
     price: "$1200",
-    tag: "sweets",
+    tag: "dulces",
     description2:
       "Croissant esponjoso relleno de irresistible chocolate para un desayuno o merienda delicioso.",
     popular: false,
