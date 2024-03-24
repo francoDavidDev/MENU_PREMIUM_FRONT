@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FlexCenter from "./muiComponents/FlexCenter";
 //import images
 import backgroundCoffe from "../assets/img/modal/backgroundCoffeMini.png";
-import coffe from "../assets/img/modal/coffe.png";
+import coffee from "../assets/img/modal/coffee.png";
 import text from "../assets/img/modal/text.png";
 //mui icons
 import CancelIcon from "@mui/icons-material/Cancel";
@@ -95,7 +95,7 @@ const Modal = () => {
         <FlexCenter
            component={motion.div}
            initial={{ y: 200 }}
-           animate={{ y: 0 }}
+           animate={{ y: 50 }}
            transition={{duration:1}}
           sx={{
             width: 1,
@@ -104,7 +104,7 @@ const Modal = () => {
             backgroundColor: "rgba(255, 0, 0, 0)",
           }}
         >
-          <img src={coffe} alt="" width={"80%"} height={"100%"} />
+          <img src={coffee} alt="" width={"80%"} height={"100%"} />
         </FlexCenter>
       </FlexCenter>
     </FlexCenter>
