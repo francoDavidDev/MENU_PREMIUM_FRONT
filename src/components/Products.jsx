@@ -13,11 +13,20 @@ import { motion } from "framer-motion";
 import { PRODUCTS } from "../constants/products";
 import FlexCenter from "./muiComponents/FlexCenter";
 
-const Products = ({ value }) => {
+const Products = ({ filterState, search }) => {
+  console.log(search);
   return (
-    <FlexCenter pb={3} flexDirection={"column"} gap={2} >
+    <FlexCenter
+      sx={{
+        backgroundColor: "primary.main",
+        gap: 2,
+        flexDirection: "column",
+        pb: 3,
+      }}
+    >
       {PRODUCTS.map((card) => {
-        return value === card.tag ? (
+        return filterState === card.tag ? (
+          /* card */
           <FlexCenter
             key={card.title}
             component={motion.div}
@@ -41,7 +50,7 @@ const Products = ({ value }) => {
               },
             }}
             sx={{
-              backgroundColor: "primary.light",
+              backgroundColor: "primary.dark",
               width: "90%",
               height: 120,
               borderRadius: 2,
@@ -59,47 +68,72 @@ const Products = ({ value }) => {
               }}
             ></FlexCenter>
             <FlexCenter
+         
+              textOverflow={"ellipsis"}
               sx={{
                 justifyContent: "left",
-                background: "primary.light",
+                flexDirection: "column",
+                textAlign: "left",
+                alignItems: "start",
+                
+                pl: 1,
                 width: 1,
                 height: 1,
-                borderRadius: 4,
+                whiteSpace: "nowrap",
+                overflow: "hidden",
+                textOverflow: "ellipsis",
               }}
             >
               <Typography
                 sx={{
                   textAlign: "left",
-                  color: "primary.dark",
+                  color: "primary.font",
                   fontWeight: "bold",
                   variant: "h5",
-                  fontSize: "0.9rem",
-                  paddingRight: 1,
-                  paddingLeft: 1,
-                  pt: "2rem",
-                  height: 1,
+                  fontSize: "1rem",
+                  pt: 2,
                 }}
               >
                 {card.title}
-                <br></br>
-                <Typography
-                  sx={{
-                    textAlign: "left",
-                    color: "primary.dark",
-                    fontWeight: "bold",
-                    variant: "h5",
-                    component: "p",
-                    fontSize: "1.1rem",
-                    paddingTop: 1,
-                  }}
-                >
-                  {card.price}
-                </Typography>
+              </Typography>
+
+              <Typography
+                sx={{
+                  textAlign: "left",
+                  color: "primary.font",
+                  variant: "h5",
+                  component: "p",
+                  fontSize: "0.8rem",
+                  pt: 2,
+                  width:'100%',
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}
+              >
+                {card.description}
+              </Typography>
+
+              <Typography
+             
+                sx={{
+                  width: 1,
+                  mt: 2,
+
+                  textAlign: "left",
+                  color: "primary.font",
+                  fontWeight: "bold",
+
+                  fontSize: "1.1rem",
+                }}
+              >
+                {card.price}.00
               </Typography>
             </FlexCenter>
             <Link to={`/singleProduct/${card.title}`} className="link">
               <IconButton
                 sx={{
+                  display: "flex",
                   position: "relative",
                   bottom: "2rem",
                   borderRadius: 50,
@@ -108,7 +142,7 @@ const Products = ({ value }) => {
                 <KeyboardArrowRightIcon
                   sx={{
                     fontSize: 30,
-                    color: "primary.dark",
+                    color: "primary.font",
                     width: "1.8rem",
                     height: "1.8rem",
                   }}

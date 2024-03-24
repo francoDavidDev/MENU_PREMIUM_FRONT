@@ -3,11 +3,11 @@ import { Box } from '@mui/system'
 import React from 'react'
 import { BANNERS } from '../constants/specials'
 
-const Banners = ({value}) => {
+const Banners = ({filterState}) => {
   return (
-    <Box sx={{ p:2 ,borderRadius:4, mt:5,  }}>
+    <Box sx={{ p:2 , pt:5, backgroundColor:'primary.main'  }}>
         {BANNERS.map((item,index)=>{
-            return item.tag === 'bannerMain' && value === item.category ?  (
+            return item.tag === 'bannerMain' && filterState === item.category ?  (
                 <Card key={index} sx={{ borderRadius:5  }}>
                 <CardMedia
                 component={'img'}

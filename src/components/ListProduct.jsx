@@ -23,18 +23,7 @@ const ListProduct = ({ obj, title, subtitle, tag }) => {
       <Title title={title} subtitle={subtitle} />
       <IconButton
         sx={{ position: "absolute", top: 80, left: 20 }}
-        component={motion.div}
-        mode="wait"
-        transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
-        animate={{
       
-          opacity: [0, 1],
-        }}
-        exit={{
-      
-          opacity: [1, 0],
-          transition: { duration: 0.5, delay: 0.5, ease: "easeOut" },
-        }}
       >
         <Link to={`/home`}>
           <ArrowBackIosIcon

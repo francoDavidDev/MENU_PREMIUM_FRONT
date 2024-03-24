@@ -11,7 +11,7 @@ body,
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: #FBE4D8;
+    background-color: #084838;
 
 }
 
@@ -84,3 +84,17 @@ body,
 .slick-slide > div {
   margin: 0 15px
 }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+

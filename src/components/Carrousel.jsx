@@ -12,8 +12,10 @@ import "slick-carousel/slick/slick-theme.css";
 import { BANNERS } from "../constants/specials";
 import { PRODUCTS } from "../constants/products";
 import FlexCenter from "./muiComponents/FlexCenter";
+//import motion
+import { motion } from "framer-motion";
 
-const Hero = ({ value }) => {
+const Hero = ({ filterState }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -24,16 +26,23 @@ const Hero = ({ value }) => {
   };
 
   return (
-    <Box sx={{ margin: "auto" }}>
-      <Box sx={{ mt: 2 }}>
-        {value === "coffees" || value === "salty" || value === "sweets" ? (
+    <motion.div
+    initial={{ opacity:0}}
+    animate={{ opacity:1 }} 
+    exit={{ opacity:0}} >
+
+
+  <Box sx={{ margin: "auto", backgroundColor:'primary.main' }}>
+      <Box >
+        {filterState === "coffees" || filterState === "salty" || filterState === "sweets" ? (
           <FlexCenter>
             <Typography
               variant="h2"
               sx={{
                 fontSize: "15px",
                 fontWeight: "bolder",
-                bgcolor: "red",
+                bgcolor: "primary.dark",
+                color:"primary.font",
                 px: 2,
                 py: 1,
                 borderRadius: 5,
@@ -49,9 +58,9 @@ const Hero = ({ value }) => {
 
         <Slider {...settings}>
           {/* PRODUCT */}
-          {value === "coffees" || value === "salty" || value === "sweets"
+          {filterState === "coffees" || filterState === "salty" || filterState === "sweets"
             ? PRODUCTS.map((item, index) => {
-                return value === item.tag && item.popular === true ? (
+                return filterState === item.tag && item.popular === true ? (
                   <Card key={index} sx={{ width: 1, borderRadius: 5 }}>
                     <CardMedia
                       component="img"
@@ -64,7 +73,7 @@ const Hero = ({ value }) => {
               })
             : /* CARROUSEL SPECIAL */
               BANNERS.map((item, index) => {
-                return value === item.category &&
+                return filterState === item.category &&
                   item.tag === "bannerCarrousel" ? (
                   <Card key={index} sx={{ width: 1, borderRadius: 5 }}>
                     <CardMedia
@@ -79,6 +88,7 @@ const Hero = ({ value }) => {
         </Slider>
       </Box>
     </Box>
+    </motion.div>
   );
 };
 

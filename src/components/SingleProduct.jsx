@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import { Box,  IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import FlexCenter from "./muiComponents/FlexCenter";
 import { motion } from "framer-motion";
 import { PRODUCTS } from "../constants/products";
@@ -13,13 +13,12 @@ const SingleProduct = () => {
   //console.log(productTitle);
   const product = PRODUCTS.find((product) => product.title === productTitle);
   const { title, image, description2, price, tag, sizes } = product;
-  
-  
-  const [priceChange,setPriceChange]=useState(price)
- 
+
+  const [priceChange, setPriceChange] = useState(price);
+
   const boton = (v) => {
-    setPriceChange(v)
-    console.log(v)
+    setPriceChange(v);
+    console.log(v);
   };
 
   return (
@@ -28,7 +27,7 @@ const SingleProduct = () => {
         position="absolute"
         pt={0}
         sx={{
-          background: `url(${image})`,
+          background: ` linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${image})`,
           backgroundPosition: "center ",
           backgroundSize: "cover",
           backgroundRepeat: "none",
@@ -65,11 +64,11 @@ const SingleProduct = () => {
             transition: { duration: 0.5, delay: 0.5, ease: "easeOut" },
           }}
         >
-          <Link to={`/${tag}`}>
+          <Link to={`/home`}>
             <ArrowBackIosIcon
               sx={{
                 fontSize: 30,
-                color: "primary.light",
+                color: "primary.dark",
                 width: "1.8rem",
                 height: "1.8rem",
               }}
@@ -88,7 +87,11 @@ const SingleProduct = () => {
         >
           <Typography
             component="h2"
-            sx={{ fontWeight: "bold", fontSize: "2rem" }}
+            sx={{
+              fontWeight: "bold",
+              fontSize: "2rem",
+              color: "primary.font",
+            }}
           >
             {title}
             <Typography>{description2} </Typography>
@@ -100,58 +103,71 @@ const SingleProduct = () => {
             top: 15,
             right: 20,
             borderRadius: 50,
-            backgroundColor: "primary.light",
-            
+            backgroundColor: "primary.dark",
+            color: "primary.font",
           }}
         >
-          <Typography sx={{ fontWeight: "bold", fontSize: "1.5rem" ,px:1 }}>
+          <Typography sx={{ fontWeight: "bold", fontSize: "1.5rem", px: 1 }}>
             {priceChange}
           </Typography>
         </FlexCenter>
 
         {/* size buttons */}
-        { sizes !==  null ?(
-           <Box
-           sx={{
-             width: 1,
-             pb: 2,
-             position: "absolute",
-             bottom: "2rem",
-             display: "flex",
-             justifyContent: "space-evenly",
-             alignItems: "center",
-           }}
-         >
-           {/* small button */}
-       
-             <CoffeeIcon
-             onClick={()=>boton(sizes.small)}
-               fontSize="small"
-               sx={{
-                 backgroundColor: "primary.light",
-                 borderRadius: 50,
-                 p: 0.5,
-               }}
-             />
-     
-           {/* medium button */}
- 
-           <CoffeeIcon
-             onClick={()=>boton(sizes.medium)}
-             fontSize="medium"
-             sx={{ backgroundColor: "primary.light", borderRadius: 50, p: 0.9 }}
-           />
- 
-           {/* large button */}
- 
-           <CoffeeIcon
-             onClick={()=>boton(sizes.large)}
-             fontSize="large"
-             sx={{ backgroundColor: "primary.light", borderRadius: 50, p: 1 }}
-           />
-         </Box>
-        ): (null) }
-       
+        {sizes !== null ? (
+          <Box
+            sx={{
+              width: 1,
+              pb: 2,
+              position: "absolute",
+              bottom: "2rem",
+              display: "flex",
+              justifyContent: "space-evenly",
+              alignItems: "center",
+            }}
+          >
+            {/* small button */}
+
+            <CoffeeIcon
+              onClick={() => boton(sizes.small)}
+              fontSize="small"
+              sx={{
+                backgroundColor: "primary.light",
+                borderRadius: 50,
+                p: 0.5,
+                backgroundColor: "primary.dark",
+                color: "primary.font",
+              }}
+            />
+
+            {/* medium button */}
+
+            <CoffeeIcon
+              onClick={() => boton(sizes.medium)}
+              fontSize="medium"
+              sx={{
+                backgroundColor: "primary.light",
+                borderRadius: 50,
+                p: 0.9,
+                backgroundColor: "primary.dark",
+                color: "primary.font",
+              }}
+            />
+
+            {/* large button */}
+
+            <CoffeeIcon
+              onClick={() => boton(sizes.large)}
+              fontSize="large"
+              sx={{
+                backgroundColor: "primary.light",
+                borderRadius: 50,
+                p: 1,
+                backgroundColor: "primary.dark",
+                color: "primary.font",
+              }}
+            />
+          </Box>
+        ) : null}
       </FlexCenter>
     </>
   );
