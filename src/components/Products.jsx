@@ -30,25 +30,10 @@ const Products = ({ filterState, search }) => {
           <FlexCenter
             key={card.title}
             component={motion.div}
-            mode="wait"
-            transition={{
-              duration: `${card.delay}`,
-              delay: `${card.delay}`,
-              ease: "easeOut",
-            }}
-            animate={{
-              x: [-3000, 0],
-              opacity: [0, 1],
-            }}
-            exit={{
-              x: [0, 3000],
-              opacity: [1, 0],
-              transition: {
-                duration: `${card.delay}`,
-                delay: `${card.delay}`,
-                ease: "easeOut",
-              },
-            }}
+            initial={{ x: 500 }}
+           animate={{ x: 0 }}
+           exit={{x:500}}
+           
             sx={{
               backgroundColor: "primary.dark",
               width: "90%",

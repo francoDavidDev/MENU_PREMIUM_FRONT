@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <AnimatedRoutes  mode="wait"/>
+        <AnimatedRoutes  />
       </BrowserRouter>
     </>
   );

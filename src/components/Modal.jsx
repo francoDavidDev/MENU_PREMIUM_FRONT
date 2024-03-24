@@ -9,30 +9,32 @@ import CancelIcon from "@mui/icons-material/Cancel";
 // mui Components
 import { Box, Typography } from "@mui/material";
 // import useSelector the redux
-import {  useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { MODAL_FUNCION } from "../features/modal/modalSlice";
-
+// motion
+import { motion } from "framer-motion";
 
 const Modal = () => {
+  const modalstate = useSelector((state) => state.modal);
+  const dispach = useDispatch();
+  const handleModal = (value) => {
+    dispach(MODAL_FUNCION(value));
+  };
 
-  const modalstate = useSelector(state => state.modal)
 
-  const dispach = useDispatch()
-
-  const handleModal =(value)=>{
-   dispach( MODAL_FUNCION(value))
-  }
-
+  
 
 
   return (
     <FlexCenter
+  
       sx={{
-        display: modalstate ? 'flex': 'none',
+        display: modalstate ? "flex" : "none",
         position: "absolute",
         width: "100%",
         height: "100%",
-        background: "rgba(255, 0, 0, 0)",
+        background: "rgba(255, 255, 255, 0.5)",
+        backdropFilter:'blur(10px)',
         zIndex: 50,
         alignItems: "center",
       }}
@@ -47,11 +49,12 @@ const Modal = () => {
           borderRadius: 5,
           alignItems: "end",
           overflow: "hidden",
+          top:'1.5em',
         }}
       >
         {/* ICON */}
         <CancelIcon
-        onClick={()=>handleModal()}
+          onClick={() => handleModal(false)}
           sx={{
             fontSize: "2.5rem",
             position: "absolute",
@@ -59,10 +62,14 @@ const Modal = () => {
             zIndex: 5,
             right: 1,
             color: "primary.second",
-          
           }}
         />
+        {/*TITLE*/}
         <FlexCenter
+          component={motion.div}
+          initial={{ y: -200 }}
+          animate={{ y: 0 }}
+
           sx={{
             mt: 2,
             position: "absolute",
@@ -75,12 +82,21 @@ const Modal = () => {
         >
           <img src={text} alt="" width={"120%"} height={"100%"} />
         </FlexCenter>
-
-        <FlexCenter sx={{ width: 1, top: 1, position: "relative" }}>
+        {/* coffee grains */}
+        <FlexCenter 
+         component={motion.div}
+         initial={{ y: 30 }}
+         animate={{ y: 0 }}
+         transition={{duration:0.5}}
+        sx={{ width: 1, top: 1, position: "relative" }}>
           <img src={backgroundCoffe} alt="" width={"100%"} height={"100%"} />
         </FlexCenter>
-
+        {/* coffee  */}
         <FlexCenter
+           component={motion.div}
+           initial={{ y: 200 }}
+           animate={{ y: 0 }}
+           transition={{duration:1}}
           sx={{
             width: 1,
             bottom: 0,

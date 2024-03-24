@@ -1,0 +1,22 @@
+export const BUTTONS_FILTER=[
+    {
+       title:'Promos',
+       value:'promotions' 
+    },
+    {
+        title:'Combos',
+        value:'combos' 
+     },
+     {
+        title:'Cafes',
+        value:'coffees' 
+     },
+     {
+        title:'Dulces',
+        value:'sweets' 
+     },
+     {
+        title:'Salados',
+        value:'salty' 
+     },
+]

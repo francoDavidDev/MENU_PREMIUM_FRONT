@@ -44,7 +44,7 @@ const AnimatedRoutes = () => {
                 path="/home"
                 element={
                   <Suspense>
-                    <Home />
+                    <Home   mode="wait"/>
                   </Suspense>
                 }
               />
@@ -53,7 +53,7 @@ const AnimatedRoutes = () => {
                 path="/singleProduct/:productTitle"
                 element={
                   <Suspense>
-                    <SingleProduct />
+                    <SingleProduct mode="wait" />
                   </Suspense>
                 }
               />

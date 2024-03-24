@@ -16,6 +16,7 @@ const SingleProduct = () => {
 
   const [priceChange, setPriceChange] = useState(price);
 
+  console.log(sizes)
   const boton = (v) => {
     setPriceChange(v);
     console.log(v);
@@ -24,6 +25,10 @@ const SingleProduct = () => {
   return (
     <>
       <FlexCenter
+        component={motion.div}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{opacity:0}}
         position="absolute"
         pt={0}
         sx={{
@@ -35,34 +40,16 @@ const SingleProduct = () => {
           height: "100%",
           alignItems: "start",
         }}
-        component={motion.div}
-        transition={{
-          duration: 1.5,
-          delay: 0.5,
-          ease: "easeIn",
-        }}
-        animate={{
-          opacity: [0, 1],
-        }}
-        exit={{
-          opacity: [1, 0],
-          transition: { duration: 0.3, delay: 0.3, ease: "easeOut" },
-        }}
+       
+       
       >
         <IconButton
-          sx={{ position: "absolute", top: 10, left: 20 }}
+          sx={{ position: "absolute", top: 10, left: 20 ,  borderRadius: 50,
+    }}
           component={motion.div}
-          mode="wait"
-          transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
-          animate={{
-            x: [-3000, 0],
-            opacity: [0, 1],
-          }}
-          exit={{
-            x: [0, -3000],
-            opacity: [1, 0],
-            transition: { duration: 0.5, delay: 0.5, ease: "easeOut" },
-          }}
+          initial={{ x: -200 }}
+          animate={{ x: 0 }}
+          exit={{x:-200}}
         >
           <Link to={`/home`}>
             <ArrowBackIosIcon
@@ -73,7 +60,7 @@ const SingleProduct = () => {
                 height: "1.8rem",
               }}
             />
-          </Link>
+          </Link  >
         </IconButton>
         <FlexCenter
           sx={{
@@ -86,7 +73,11 @@ const SingleProduct = () => {
           }}
         >
           <Typography
-            component="h2"
+             component={motion.p}
+             initial={{ x: -500 }}
+             animate={{ x: 0 }}
+             exit={{x:-500}}
+         
             sx={{
               fontWeight: "bold",
               fontSize: "2rem",
@@ -98,23 +89,33 @@ const SingleProduct = () => {
           </Typography>
         </FlexCenter>
         <FlexCenter
+           component={motion.div}
+           initial={{ x: 200 }}
+           animate={{ x: 0 }}
+           exit={{x:200}}
           sx={{
             position: "absolute",
             top: 15,
             right: 20,
             borderRadius: 50,
-            backgroundColor: "primary.dark",
+            backgroundColor: "primary.main",
             color: "primary.font",
           }}
         >
-          <Typography sx={{ fontWeight: "bold", fontSize: "1.5rem", px: 1 }}>
+          <Typography
+            
+          sx={{ fontWeight: "bold", fontSize: "1.5rem", px: 1 }}>
             {priceChange}
           </Typography>
         </FlexCenter>
 
         {/* size buttons */}
-        {sizes !== null ? (
+        {sizes ? (
           <Box
+          component={motion.div}
+          initial={{ y:200 }}
+          animate={{ y:0 }}
+          exit={{y:200}}
             sx={{
               width: 1,
               pb: 2,
@@ -134,7 +135,7 @@ const SingleProduct = () => {
                 backgroundColor: "primary.light",
                 borderRadius: 50,
                 p: 0.5,
-                backgroundColor: "primary.dark",
+                backgroundColor: "primary.main",
                 color: "primary.font",
               }}
             />
@@ -145,10 +146,9 @@ const SingleProduct = () => {
               onClick={() => boton(sizes.medium)}
               fontSize="medium"
               sx={{
-                backgroundColor: "primary.light",
                 borderRadius: 50,
                 p: 0.9,
-                backgroundColor: "primary.dark",
+                backgroundColor: "primary.main",
                 color: "primary.font",
               }}
             />
@@ -162,7 +162,7 @@ const SingleProduct = () => {
                 backgroundColor: "primary.light",
                 borderRadius: 50,
                 p: 1,
-                backgroundColor: "primary.dark",
+                backgroundColor: "primary.main",
                 color: "primary.font",
               }}
             />

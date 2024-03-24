@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = 'promos'
+const initialState = 'promotions'
 
 export const buttonsSlice = createSlice({
   name: "buttons",
