@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter , HashRouter} from "react-router-dom";
 
 import AnimatedRoutes from "./components/AnimatedRoutes";
 import Loading from "./components/Loading";
@@ -21,11 +21,11 @@ function App() {
     
     
     <>
-      <BrowserRouter>
+      <HashRouter>
       { loading ? ( <Loading/>): (  <AnimatedRoutes  />)}
      
       
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }

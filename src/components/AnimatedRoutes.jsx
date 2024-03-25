@@ -39,9 +39,9 @@ const AnimatedRoutes = () => {
         <Routes Routes location={location} key={location.pathname}>
           {w <= 700 ? (
             <>
-              <Route path="/" element={<Navigate to="home" replace />} />
+       
               <Route
-                path="/home"
+                path="/"
                 element={
                   <Suspense>
                     <Home   mode="wait"/>
