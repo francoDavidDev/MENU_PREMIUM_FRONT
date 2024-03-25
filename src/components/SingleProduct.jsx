@@ -51,7 +51,7 @@ const SingleProduct = () => {
           animate={{ x: 0 }}
           exit={{x:-200}}
         >
-          <Link to={`/home`}>
+          <Link to={`/`}>
             <ArrowBackIosIcon
               sx={{
                 fontSize: 30,
