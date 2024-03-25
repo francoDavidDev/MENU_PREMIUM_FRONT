@@ -30,7 +30,7 @@ const Header = () => {
             gap: 2,
           }}
         >
-          <TuneIcon style={{ fontSize: "1.5rem", fontWeight: "bold" }} />
+       {/*   <TuneIcon style={{ fontSize: "1.5rem", fontWeight: "bold" }} />*/}
         </Box>
       </FlexStart>
     </motion.div>
