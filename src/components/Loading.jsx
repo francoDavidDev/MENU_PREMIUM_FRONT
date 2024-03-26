@@ -7,8 +7,8 @@ const Loading = () => {
  
 
   return (
-    <FlexCenter width={1} height={1} sx={{position:'absolute', zIndex:100, backgroundColor:'#faf2ca   '}}>
-        <img  src={loadinCoffee} width={'100%'}  height={'50%'} />
+    <FlexCenter width={1} height={1} sx={{position:'absolute', zIndex:100, backgroundColor:'primary.second'}}>
+        <img  src={loadinCoffee} width={'70%'}  height={'30%'} />
     </FlexCenter>
   )
 }

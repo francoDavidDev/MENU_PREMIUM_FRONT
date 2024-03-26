@@ -4,14 +4,14 @@ import { useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Logo from "./Header";
 
-//import Home from '../scenes/Home'
+import Home from "../scenes/Home";
 //import Coffes from '../scenes/Coffes'
 //import CoffeeSingle from '../scenes/CoffeeSingle'
 //import Sugars from '../scenes/Sugars'
 //import Salty from '../scenes/Saltys'
 //import Error404 from '../scenes/Error404'
 
-const Home = React.lazy(() => import("../scenes/Home"));
+//const Home = React.lazy(() => import("../scenes/Home"));
 const SingleProduct = React.lazy(() => import("./SingleProduct"));
 const Error404 = React.lazy(() => import("../scenes/Error404"));
 
@@ -39,15 +39,7 @@ const AnimatedRoutes = () => {
         <Routes Routes location={location} key={location.pathname}>
           {w <= 700 ? (
             <>
-       
-              <Route
-                path="/"
-                element={
-                  <Suspense>
-                    <Home   mode="wait"/>
-                  </Suspense>
-                }
-              />
+              <Route path="/" element={<Home mode="wait" />} />
 
               <Route
                 path="/singleProduct/:productTitle"

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect, Suspense } from "react";
 
 import { BrowserRouter , HashRouter} from "react-router-dom";
 
-import AnimatedRoutes from "./components/AnimatedRoutes";
 import Loading from "./components/Loading";
+// compoments paths
+const AnimatedRoutes = React.lazy(() => import("./components/AnimatedRoutes"));
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
     
     <>
       <HashRouter>
-      { loading ? ( <Loading/>): (  <AnimatedRoutes  />)}
+      { loading ? ( <Loading/>): ( <Suspense><AnimatedRoutes  /></Suspense> )}
      
       
       </HashRouter>
